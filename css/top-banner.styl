@@ -1,0 +1,38 @@
+ .banner
+   width 100%
+   position relative
+
+   .slide
+     display none
+     width 100%
+     background-color $gray-color
+     color: $white-color
+     font-weight bold
+     font-size 0.7rem
+     height 15px
+     letter-spacing 0.1rem
+     align-items center
+     justify-content center
+
+   .dots
+     position absolute
+     top 50%
+     transform translateY(-50%)
+     right 100px
+
+     .dot
+       cursor pointer
+       height 8px
+       width 8px
+       margin 0 2px
+       background-color $transparent-color
+       border 1px solid $black-color
+       border-radius 50%
+       display inline-block
+       transition background-color 0.6s ease
+
+     .active, .dot:hover
+       background-color $black-color
+
+
+
