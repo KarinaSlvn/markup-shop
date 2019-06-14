@@ -20,7 +20,11 @@
   text-align center
   margin-bottom 80px
 
-@media (min-width: 768px) and (max-width: 1365px)
+@media (min-width: 1024px) and (max-width: 1365px)
+   .separator
+     margin-bottom 40px
+
+@media (min-width: 768px) and (max-width: 1023px)
   .marker
     &__text
       font-size 1.25rem
@@ -30,3 +34,17 @@
 
   .separator
      margin-bottom 40px
+
+@media (min-width: 320px) and (max-width: 425px)
+  .marker
+    padding 40px 15px 40px
+
+    &__text
+      font-size 1.2rem
+
+    .marker__arrow
+      width 60px
+
+  .separator
+    margin-top 20px
+    margin-bottom 40px

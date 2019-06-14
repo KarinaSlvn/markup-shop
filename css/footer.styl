@@ -1,4 +1,6 @@
- footer
+.mobile-footer
+  display none
+footer
    height 40px
    width 100%
    background-color $black-color
@@ -27,13 +29,23 @@
        justify-content space-between
 
 
- @media (min-width: 1366px) and (max-width: 1599px)
+@media (min-width: 1366px) and (max-width: 1599px)
    footer
     .footer-navigations
       .footer-links
         width 53%
 
-@media (min-width: 768px) and (max-width: 1365px)
+@media (min-width: 1024px) and (max-width: 1365px)
+  footer
+    .footer-navigations
+      padding 0 100px
+      .footer-links
+        width 63%
+
+      .footer-icons
+        width 12%
+
+@media (min-width: 768px) and (max-width: 1023px)
   footer
     .footer-navigations
       padding 0 15px
@@ -42,3 +54,18 @@
 
       .footer-icons
         width 12%
+
+@media (min-width: 320px) and (max-width: 425px)
+  .desktop-footer
+    display none
+
+  .mobile-footer
+    display flex
+    justify-content center
+    align-items center
+    height 50px
+    width 100%
+    background-color $gray-color
+
+    .footer-logo
+      width 90px

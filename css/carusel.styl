@@ -160,11 +160,28 @@
  @media (min-width: 768px) and (max-width: 1365px)
    .slider
      .slide
+       &__description
+         left 65px
+
+ @media (min-width: 1024px) and (max-width: 1365px)
+   .main-slider
+     padding 0 100px 20px 100px
+
+     .wrapper
+       height 255px
+
+     .btn-right
+       right 78px
+
+     .btn-left
+       left 58px
+
+ @media (min-width: 768px) and (max-width: 1023px)
+   .slider
+     .slide
        height 370px
 
        &__description
-          left 65px
-
          .description__title
             font-size 1.3rem
             width 185px
@@ -244,3 +261,84 @@
 
      .wrapper:after
        left 100%
+
+@media (min-width: 320px) and (max-width: 425px)
+  .slider
+    .slide
+      height 195px
+
+      &__description
+         left 17px
+
+         .description__title
+            font-size 1rem
+            width 140px
+
+         .description__sub-title
+            font-size 0.8rem
+
+         .btn__confira
+           width 86px
+           font-size 1rem
+           margin-top 20px
+
+    .dots
+      bottom 15px
+
+      .dot
+        margin 0 3px
+        border 1px solid $gray-color
+
+
+  .main-slider
+    padding 0 60px 20px 60px
+
+    .wrapper
+      height 335px
+      overflow visible
+
+      .carousel
+        width auto
+
+        .card
+          width 155px
+          position relative
+
+          .sale
+            display flex
+            position absolute
+            left: -6px;
+            top: -21px;
+
+          .new__price
+            display flex
+            font-size 1.2rem
+
+          .card__img
+            height 82%
+
+      .carousel .card:nth-child(2n)
+        .card__price
+          color $gray-color
+          text-decoration line-through;
+
+
+    .slider-btn
+      display none
+
+    .wrapper:before, .wrapper:after
+      content:''
+      display: block
+      position:absolute
+      top:0
+      bottom:0
+      width 200px
+      box-shadow: 1px 39px 50px white;
+      background: rgba(255, 255, 255, 0.62);
+      z-index 3
+
+    .wrapper:before
+      right 100%
+
+    .wrapper:after
+      left 100%

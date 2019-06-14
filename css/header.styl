@@ -1,3 +1,6 @@
+.mobile-header
+   display none
+
 header
   background-color $black-color
   height 50px
@@ -49,7 +52,13 @@ header
         right 20px
         border 1px solid $black-color
 
-@media (min-width: 768px) and (max-width: 1365px)
+@media (min-width: 1024px) and (max-width: 1365px)
+  header
+    .header__content
+      padding 0 100px
+
+
+@media (min-width: 425px) and (max-width: 1023px)
   header
     .header__content
       padding 0 15px
@@ -60,3 +69,13 @@ header
 
     .header__text
       font-size 1.3rem
+
+@media (min-width: 320px) and (max-width: 425px)
+ .desktop-header
+      display none
+
+ .mobile-header
+      display flex
+
+
+

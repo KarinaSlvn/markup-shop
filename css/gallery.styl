@@ -57,10 +57,31 @@
        .gallery__img
          object-position 10% 20%
 
+ @media (min-width: 1024px) and (max-width: 1365px)
+   .gallery
+     padding 0 100px
 
- @media (min-width: 768px) and (max-width: 1365px)
+
+ @media (min-width: 768px) and (max-width: 1023px)
    .gallery
      padding 0 15px
 
      &__row
        height 225px
+
+ @media (min-width: 320px) and (max-width: 425px)
+   .gallery
+     padding 0 15px
+
+     &__row
+       flex-direction column
+       height auto
+       margin-bottom 0
+
+       .gallery__block
+         width 100%
+         height 220px
+         margin-bottom 20px
+
+
+
