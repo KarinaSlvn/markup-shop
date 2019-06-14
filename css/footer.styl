@@ -1,0 +1,44 @@
+ footer
+   height 40px
+   width 100%
+   background-color $black-color
+
+   .footer-navigations
+     padding 0 200px
+     display flex
+     height 100%
+     align-items center
+     justify-content space-between
+
+     .footer-links
+       width 40%
+       display flex
+       justify-content space-between
+
+       .footer-link
+         color $white-color
+
+         &:hover
+           text-decoration underline
+
+     .footer-icons
+       width 10%
+       display flex
+       justify-content space-between
+
+
+ @media (min-width: 1366px) and (max-width: 1599px)
+   footer
+    .footer-navigations
+      .footer-links
+        width 53%
+
+@media (min-width: 768px) and (max-width: 1365px)
+  footer
+    .footer-navigations
+      padding 0 15px
+      .footer-links
+        width 67%
+
+      .footer-icons
+        width 12%

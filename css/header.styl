@@ -38,12 +38,25 @@ header
     .cart
       position relative
       .count-order
-        width 20px
-        height 20px
+        width 23px
+        height 23px
         text-align center
-        line-height 20px
+        line-height 23px
         border-radius 50%
         background-color $white-color
         color $black-color
         position absolute
         right 20px
+        border 1px solid $black-color
+
+@media (min-width: 768px) and (max-width: 1365px)
+  header
+    .header__content
+      padding 0 15px
+
+      .burger-menu
+        .bar1, .bar2, .bar3
+          height 3px
+
+    .header__text
+      font-size 1.3rem

@@ -1,0 +1,61 @@
+ .buttons
+   display flex
+   justify-content space-between
+   padding 40px 200px
+
+   .news-letters
+     width 200px
+     height 30px
+     background $black-color
+     color $white-color
+     text-transform uppercase
+     border none
+     position relative
+
+     &::after
+       content ''
+       position absolute
+       right -27px
+       top 0px
+       border 15px solid transparent
+       border-left 12px solid $black-color
+
+   .simple-btn
+     width 300px
+     height 30px
+     background $transparent-color
+     border 2px solid $gray-color
+     text-transform uppercase
+
+   .codastrar
+     width 200px
+     height 30px
+     background $gray-color
+     border none
+     text-transform uppercase
+     box-shadow $box-shadow-middle
+
+ @media (min-width: 1366px) and (max-width: 1599px)
+   .buttons
+     .news-letters
+       width 140px
+
+     .simple-btn
+       width 300px
+
+     .codastrar
+        width 140px
+
+@media (min-width: 768px) and (max-width: 1365px)
+  .buttons
+    padding 40px 15px
+
+    .news-letters
+      width 125px
+
+    .simple-btn
+      width 210px
+
+    .codastrar
+      width 130px
+
