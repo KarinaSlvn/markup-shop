@@ -2,48 +2,48 @@ header
   background-color $black-color
   height 50px
 
-.header__content
-  width 100%
-  padding 0 100px
-  justify-content space-between
-  align-items center
-  height 100%
-  position relative
+  .header__content
+    width 100%
+    padding 0 200px
+    justify-content space-between
+    align-items center
+    height 100%
 
-  .burger-menu
-    flex-direction column
-    cursor pointer
+    .burger-menu
+      flex-direction column
+      cursor pointer
 
-    .bar1, .bar2, .bar3
-      width 30px
-      height 5px
-      background-color $white-color
-      margin-bottom 5px
-      transition 0.4s
+      .bar1, .bar2, .bar3
+        width 30px
+        height 5px
+        background-color $white-color
+        margin-bottom 5px
+        transition 0.4s
 
-  .logo
-    color #fff
-    position absolute
-    left 50%
-    transform translateX(-50%)
-    font-size 1.8rem
+    .logo
+      color #fff
+      position absolute
+      left 50%
+      transform translateX(-50%)
+      font-size 1.8rem
 
-  .header__text
-    color $white-color
-    font-size 1.6rem
-    margin-right 20px
+    .header__text
+      color $white-color
+      font-size 1.6rem
+      margin-right 20px
 
-    &:hover
-      text-decoration underline
+      &:hover
+        text-decoration underline
 
-  .count-order
-    width 20px
-    height 20px
-    text-align center
-    line-height 20px
-    border-radius 50%
-    background-color $white-color
-    color $black-color
-    position absolute
-    right 119px
-    top 3px
+    .cart
+      position relative
+      .count-order
+        width 20px
+        height 20px
+        text-align center
+        line-height 20px
+        border-radius 50%
+        background-color $white-color
+        color $black-color
+        position absolute
+        right 20px

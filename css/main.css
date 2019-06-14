@@ -147,7 +147,7 @@ div {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 100px;
+  right: 200px;
 }
 .banner .dots .dot {
   cursor: pointer;
@@ -238,7 +238,7 @@ div {
 }
 .main-slider {
   width: 100%;
-  padding: 0 100px;
+  padding: 0 200px;
   padding-bottom: 25px;
   position: relative;
 }
@@ -307,52 +307,54 @@ div {
   color: #000;
 }
 .main-slider .btn-left {
-  left: 60px;
+  left: 160px;
 }
 .main-slider .btn-right {
-  right: 60px;
+  right: 180px;
 }
 header {
   background-color: #000;
   height: 50px;
 }
-.header__content {
+header .header__content {
   width: 100%;
-  padding: 0 100px;
+  padding: 0 200px;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  position: relative;
 }
-.header__content .burger-menu {
+header .header__content .burger-menu {
   flex-direction: column;
   cursor: pointer;
 }
-.header__content .burger-menu .bar1,
-.header__content .burger-menu .bar2,
-.header__content .burger-menu .bar3 {
+header .header__content .burger-menu .bar1,
+header .header__content .burger-menu .bar2,
+header .header__content .burger-menu .bar3 {
   width: 30px;
   height: 5px;
   background-color: #fff;
   margin-bottom: 5px;
   transition: 0.4s;
 }
-.header__content .logo {
+header .header__content .logo {
   color: #fff;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.8rem;
 }
-.header__content .header__text {
+header .header__content .header__text {
   color: #fff;
   font-size: 1.6rem;
   margin-right: 20px;
 }
-.header__content .header__text:hover {
+header .header__content .header__text:hover {
   text-decoration: underline;
 }
-.header__content .count-order {
+header .header__content .cart {
+  position: relative;
+}
+header .header__content .cart .count-order {
   width: 20px;
   height: 20px;
   text-align: center;
@@ -361,8 +363,7 @@ header {
   background-color: #fff;
   color: #000;
   position: absolute;
-  right: 119px;
-  top: 3px;
+  right: 20px;
 }
 .marker {
   width: 100%;
@@ -370,7 +371,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0 20px 0;
+  padding: 40px 0 40px 0;
 }
 .marker__text {
   color: #000;
@@ -388,7 +389,7 @@ header {
 }
 .gallery {
   width: 100%;
-  padding: 0 100px;
+  padding: 0 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -398,19 +399,106 @@ header {
   display: flex;
   justify-content: space-between;
   height: 440px;
-/* object-position */
+  margin-bottom: 20px;
 }
 .gallery__row .gallery__block {
   height: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 .gallery__row .gallery__block .gallery__img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.5);
+}
+.gallery__row .gallery__block .gallery__img:hover {
+  filter: brightness(50%);
+}
+.gallery__row .gallery__block .block__text {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  text-shadow: 1px 3px 0 #000;
 }
 .gallery__row .--first-block,
 .gallery__row .--second-block {
   width: 49%;
+}
+.gallery__row .--third-block,
+.gallery__row .--seven-block {
+  width: 64%;
+}
+.gallery__row .--four-block,
+.gallery__row .--six-block {
+  width: 34%;
+}
+.gallery__row .--second-block .gallery__img,
+.gallery__row .--four-block .gallery__img {
+  object-position: 100%;
+}
+.gallery__row .--six-block .gallery__img {
+  object-position: 10% 20%;
+}
+.gallery__row .--seven-block .gallery__img {
+  object-position: 10% 20%;
+}
+.instagram-gallery {
+  padding: 0 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.instagram-gallery .wrapper {
+  width: 225px;
+  height: 225px;
+  position: relative;
+  cursor: pointer;
+}
+.instagram-gallery .wrapper .block .cover {
+  width: 100%;
+  height: 100%;
+}
+.instagram-gallery .wrapper .block .block-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.instagram-gallery .wrapper .block .block-bg .img-like {
+  margin-bottom: 20px;
+}
+.instagram-gallery .wrapper .block .block-bg .count-likes {
+  color: #fff;
+}
+.instagram-gallery .wrapper .block:hover .cover {
+  opacity: 0.3;
+  transition: all 1s;
+}
+.instagram-gallery .wrapper .block:hover .img-like {
+  transition: all 2s;
+}
+.instagram-gallery .wrapper:hover .block-bg {
+  display: flex;
+}
+.instagram-gallery .wrapper:hover .block {
+  background-color: rgba(0,0,0,0.8);
+  transition: all 1s;
+}
+.instagram-gallery .bottom-row {
+  width: 280px;
+  height: 280px;
 }
 .bold {
   font-weight: bold;
