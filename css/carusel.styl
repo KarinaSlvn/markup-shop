@@ -201,7 +201,7 @@
           margin 0 3px
 
    .main-slider
-     padding 0 60px 20px 60px
+     padding 0
 
      .wrapper
        height 335px
@@ -227,7 +227,7 @@
            .card__img
              height 82%
 
-       .carousel .card:nth-child(2n)
+       .carousel .card:nth-child(2n+1)
          .card__price
            color $gray-color
            text-decoration line-through;
@@ -249,18 +249,18 @@
        content:''
        display: block
        position:absolute
-       top:0
+       top: -20px
        bottom:0
-       width 200px
+       width 100px
        box-shadow: 1px 39px 50px white;
        background: rgba(255, 255, 255, 0.62);
        z-index 3
 
      .wrapper:before
-       right 100%
+       right 0
 
      .wrapper:after
-       left 100%
+       left 0
 
 @media (min-width: 320px) and (max-width: 425px)
   .slider
@@ -291,7 +291,7 @@
 
 
   .main-slider
-    padding 0 60px 20px 60px
+    padding 0
 
     .wrapper
       height 335px
@@ -299,6 +299,8 @@
 
       .carousel
         width auto
+        left 70%
+        transform translateX(-50%)
 
         .card
           width 155px
@@ -317,7 +319,7 @@
           .card__img
             height 82%
 
-      .carousel .card:nth-child(2n)
+      .carousel .card:nth-child(2n+1)
         .card__price
           color $gray-color
           text-decoration line-through;
@@ -332,13 +334,43 @@
       position:absolute
       top:0
       bottom:0
-      width 200px
       box-shadow: 1px 39px 50px white;
       background: rgba(255, 255, 255, 0.62);
       z-index 3
 
     .wrapper:before
-      right 100%
+      right 0
+      width 100px
 
     .wrapper:after
-      left 100%
+      left 0
+      width 115px
+
+@media (min-width: 320px) and (max-width: 375px)
+  .main-slider
+    .wrapper:before
+      width 111px
+
+    .wrapper:after
+      width 85px
+
+@media (max-width: 320px)
+  .slider
+    .slide
+      &__description
+        left 4px
+
+        .description__title
+          width 112px
+
+        .btn__confira
+          width 72px
+          font-size 0.8rem
+
+  .main-slider
+    .wrapper
+      &:before, &:after
+        top: -22px
+
+       .carousel
+         left 77%

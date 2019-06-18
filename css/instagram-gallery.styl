@@ -2,100 +2,155 @@
     padding 0 200px
     width 100%
     display flex
-    justify-content space-between
+    justify-content center
 
-    .wrapper
-      width 225px
-      height 225px
-      position relative
-      cursor pointer
+    .wrapper-all
+      justify-content space-between
+      width 100%
 
-      .block
-        .cover
-          width 100%
-          height 100%
+      .wrapper
+        width 225px
+        height 225px
+        position relative
+        cursor pointer
 
-        .block-bg
-          position absolute
-          left 0
-          bottom 0
-          right 0
-          top 0
-          width 100%
-          height 100%
-          display none
-          flex-direction column
-          justify-content center
-          align-items center
+        .block
+          .cover
+            width 100%
+            height 100%
 
-          .img-like
-            margin-bottom 20px
+          .block-bg
+            position absolute
+            left 0
+            bottom 0
+            right 0
+            top 0
+            width 100%
+            height 100%
+            display none
+            flex-direction column
+            justify-content center
+            align-items center
 
-          .count-likes
-            color $white-color
+            .img-like
+              margin-bottom 20px
 
-        &:hover .cover
-          opacity 0.3
+            .count-likes
+              color $white-color
+
+          &:hover .cover
+            opacity 0.3
+            transition all 1s
+
+          &:hover .img-like
+            transition all 2s
+
+        &:hover .block-bg
+          display flex
+
+        &:hover .block
+          background-color rgba(0,0,0,.8)
           transition all 1s
 
-        &:hover .img-like
-          transition all 2s
-
-      &:hover .block-bg
-        display flex
-
-      &:hover .block
-        background-color rgba(0,0,0,.8)
-        transition all 1s
-
-    .bottom-row
-      width 280px
-      height 280px
+      .bottom-row
+        width 280px
+        height 280px
 
 
 @media (min-width: 1366px) and (max-width: 1599px)
   .instagram-gallery
-    .wrapper
-      width 180px
-      height 180px
+    .wrapper-all
+      .wrapper
+        width 180px
+        height 180px
 
-    .bottom-row
-      width 225px
-      height 225px
+      .bottom-row
+        width 225px
+        height 225px
 
 @media (min-width: 1024px) and (max-width: 1365px)
   .instagram-gallery
     padding 0 100px
+    .wrapper-all
 
-    .wrapper
-      width 155px
-      height 155px
+      .wrapper
+        width 155px
+        height 155px
 
-    .bottom-row
-      width 195px
-      height 195px
+      .bottom-row
+        width 195px
+        height 195px
 
 @media (min-width: 768px) and (max-width: 1023px)
   .instagram-gallery
     padding 0 15px
+    .wrapper-all
+      .wrapper
+        width 140px
+        height 140px
 
-    .wrapper
-      width 140px
-      height 140px
-
-    .bottom-row
-      width 170px
-      height 170px
+      .bottom-row
+        width 170px
+        height 170px
 
 @media (min-width: 320px) and (max-width: 425px)
   .instagram-gallery
     padding 0
+    position relative
 
-    .wrapper
-      width 135px
-      height 135px
-      margin-right 10px
+    .wrapper-all
+      width auto
+      &:before, &:after
+        content:''
+        display: block
+        position:absolute
+        top:0
+        bottom:0
+        width 135px
+        background: rgba(255, 255, 255, 0.62);
+        z-index 3
 
-    .bottom-row
-      width 170px
-      height 170px
+      &:before
+        right 0
+
+      &:after
+        left 0
+
+      .wrapper
+        width 135px
+        height 135px
+        margin-right 20px
+
+      .bottom-row
+        width 170px
+        height 170px
+
+  .quem-usa
+    .wrapper-all
+      .wrapper:last-child
+        display none
+
+      &:before, &:after
+        width 117px
+
+@media (min-width: 320px) and (max-width: 375px)
+  .instagram-gallery
+    .wrapper-all
+      &:before, &:after
+        width 111px
+
+  .quem-usa
+    .wrapper-all
+      &:before, &:after
+        width 92px
+
+@media (max-width: 320px)
+  .instagram-gallery
+    .wrapper-all
+      &:before, &:after
+        width 83px
+
+  .quem-usa
+    .wrapper-all
+      &:before, &:after
+        width 65px

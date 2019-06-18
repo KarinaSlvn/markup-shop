@@ -80,8 +80,25 @@
 
        .gallery__block
          width 100%
-         height 220px
          margin-bottom 20px
 
 
+       .--first-block, .--second-block
+         height 220px
 
+       .--third-block
+         height 170px
+
+       .--four-block, .--six-block
+         height 300px
+
+       .--seven-block
+         height 180px
+
+@media (min-width: 320px) and (max-width: 375px)
+  .gallery
+    &__row
+      .gallery__block
+        .block__text
+          width 100%
+          text-align center

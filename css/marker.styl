@@ -35,7 +35,7 @@
   .separator
      margin-bottom 40px
 
-@media (min-width: 320px) and (max-width: 425px)
+@media (max-width: 425px)
   .marker
     padding 40px 15px 40px
 
@@ -48,3 +48,18 @@
   .separator
     margin-top 20px
     margin-bottom 40px
+
+@media (min-width: 320px) and (max-width: 375px)
+  .marker
+    &__text
+      font-size 1rem
+
+    .marker__arrow
+      height 12px
+
+@media (max-width: 320px)
+ .marker
+   &__text
+     font-size 0.9rem
+     padding 0 10px
+
