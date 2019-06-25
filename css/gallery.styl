@@ -1,6 +1,6 @@
  .gallery
    width 100%
-   padding 0 200px
+   padding 0 185px
    display flex
    flex-direction column
    align-items center
@@ -20,12 +20,17 @@
 
        .gallery__img
          object-fit cover
+         -o-object-fit cover
          height 100%
          width 100%
          transform scale(1.5)
 
          &:hover
            filter: brightness(50%);
+           -webkit-filter brightness(50%)
+           -ms-filter brightness(50%)
+           -moz-filter brightness(50%)
+           -o-filter brightness(50%)
 
        .block__text
          position absolute

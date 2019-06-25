@@ -2,13 +2,21 @@
   "name": "test-task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "watch": "stylus --watch css/main.styl"
+    "watch": "stylus --watch css/main.styl",
+    "babel": "npx babel src --out-dir dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "@babel/polyfill": "^7.4.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   }
 }

@@ -1,3 +1,5 @@
+import "@babel/polyfill";
+
 let slideIndex = 1;
 const bannerDots = document.querySelectorAll(".banner .dots .dot");
 const sliderDots = document.querySelectorAll(".slider .dots .dot");
