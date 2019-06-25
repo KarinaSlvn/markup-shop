@@ -1,0 +1,134 @@
+
+  .overlay
+    display none
+    position fixed
+    z-index 1
+    left 50%
+    max-width 1600px
+    transform translateX(-50%)
+    top 0
+    width 100%
+    height 100%
+    overflow auto
+    background-color rgba(255, 255, 255, 0.4)
+
+  .modal-content
+    display none
+    position absolute
+    right 0
+    top 0
+    background-color $white-color
+    border 2px solid $black-color
+    border-right none
+    border-top none
+    width 600px
+    height 660px
+    flex-direction column
+    z-index 2
+    .basket__header
+      width 100%
+      padding 0 185px 0 25px
+      .header__content
+        padding 0
+        .header__title
+          color $white-color
+          text-transform uppercase
+          font-size 1.25rem
+    .basket-content
+      flex-direction column
+      .product-card
+        width 100%
+        padding-right 185px
+        border-bottom 2px solid $gray-color
+        height 118px
+        .card-img
+          height 100%
+          margin-right 15px
+        .card-info
+          flex-direction column
+          width 100%
+          padding 15px 0 10px 0
+          .info-title, .card-sum
+            justify-content space-between
+            .name-product
+              font-size 1.3rem
+              font-weight bold
+            .delete-product, .minus-product, .add-product
+              border 2px solid $black-color
+              width 25px
+              height 25px
+              color $black-color
+              background-color $white-color
+              font-size 1rem
+              padding 0
+              font-weight bold
+              text-align center
+              cursor pointer
+          .color-product
+            margin-top 5px
+            background-color $black-color
+            width 25px
+            height 25px
+          .card-sum
+            margin-top 10px
+            .input-count-prod
+              width 45px
+              margin 0 5px
+              background-color $gray-color
+              border none
+              text-align center
+              font-size 1rem
+            .sum-price
+              font-size 1.3rem
+    .total-sum
+      width 100%
+      height 50px
+      background-color $gray-color
+      position absolute
+      bottom 85px
+      flex-direction row
+      justify-content space-between
+      align-items center
+      .title
+        font-size 1.3rem
+        font-weight bold
+        text-transform uppercase
+        padding-left 25px
+      .sum
+        padding-right 185px
+        font-size 1.3rem
+    .basket__footer
+      position absolute
+      bottom 0
+      height 85px
+      display flex
+
+      .footer-block
+        width 400px
+        background-color $white-color
+        height 100%
+        font-weight bold
+        color $gray-color
+        font-size 1.6rem
+        padding-left 25px
+        display flex
+        align-items center
+      .footer-checkout
+        color $white-color
+        font-weight bold
+        cursor pointer
+        justify-content space-between
+        align-items center
+        font-size 1.6rem
+        text-transform uppercase
+        padding 0 185 0 25px
+        width 100%
+        .arrow
+          font-size 4rem
+          margin-left 20px
+          font-weight normal
+
+
+
+
+

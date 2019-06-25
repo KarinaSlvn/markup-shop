@@ -1,6 +1,5 @@
 "use strict";
 
-
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -9,11 +8,12 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
+// import "@babel/polyfill";
 var slideIndex = 1;
-var bannerDots = document.querySelectorAll(".banner .dots .dot");
-var sliderDots = document.querySelectorAll(".slider .dots .dot");
-var bannerSlides = document.querySelectorAll(".banner .slide");
-var sliderSlides = document.querySelectorAll(".slider .slide");
+var bannerDots = document.querySelectorAll('.banner .dots .dot');
+var sliderDots = document.querySelectorAll('.slider .dots .dot');
+var bannerSlides = document.querySelectorAll('.banner .slide');
+var sliderSlides = document.querySelectorAll('.slider .slide');
 
 var currentSlide = function currentSlide(slideIndex, dots, slides) {
   showSlides(slideIndex, dots, slides);
@@ -28,11 +28,11 @@ var showSlides = function showSlides(slideIndex, dots, slides) {
   });
 
   _toConsumableArray(dots).map(function (dot) {
-    return dot.className = dot.className.replace(" active", "");
+    return dot.className = dot.className.replace(' active', '');
   });
 
-  slides[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].className += " active";
+  slides[slideIndex - 1].style.display = 'flex';
+  dots[slideIndex - 1].className += ' active';
 
   _toConsumableArray(dots).map(function (dot, index) {
     return dot.addEventListener('click', function () {
@@ -43,25 +43,54 @@ var showSlides = function showSlides(slideIndex, dots, slides) {
 
 showSlides(slideIndex, bannerDots, bannerSlides);
 showSlides(slideIndex, sliderDots, sliderSlides);
-var carousel = document.querySelector("[data-target='carousel']");
-var card = carousel.querySelector("[data-target='card']");
-var leftButton = document.querySelector("[data-action='slideLeft']");
-var rightButton = document.querySelector("[data-action='slideRight']");
+var carousel = document.querySelector('[data-target=\'carousel\']');
+var card = carousel.querySelector('[data-target=\'card\']');
+var leftButton = document.querySelector('[data-action=\'slideLeft\']');
+var rightButton = document.querySelector('[data-action=\'slideRight\']');
 var carouselWidth = carousel.offsetWidth;
 var cardStyle = card.currentStyle || window.getComputedStyle(card);
 var cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
-var cardCount = carousel.querySelectorAll("[data-target='card']").length;
+var cardCount = carousel.querySelectorAll('[data-target=\'card\']').length;
 var offset = 0;
 var maxX = -(cardCount / 3 * carouselWidth + cardMarginRight * (cardCount / 3) - carouselWidth - cardMarginRight);
-leftButton.addEventListener("click", function () {
+leftButton.addEventListener('click', function () {
   if (offset !== 0) {
     offset += carouselWidth + cardMarginRight;
     carousel.style.transform = "translateX(".concat(offset, "px)");
   }
 });
-rightButton.addEventListener("click", function () {
+rightButton.addEventListener('click', function () {
   if (offset !== maxX) {
     offset -= carouselWidth + cardMarginRight;
     carousel.style.transform = "translateX(".concat(offset, "px)");
   }
 });
+var btnOpenBasket = document.querySelectorAll('.custom-links .cart');
+var btnCloseBasket = document.getElementsByClassName('footer-checkout')[0];
+
+var openModal = function openModal(nameModal) {
+  document.getElementsByClassName(nameModal)[0].style.display = 'flex';
+  document.getElementsByClassName('overlay')[0].style.display = 'flex';
+};
+
+var closeModal = function closeModal(nameModal) {
+  document.getElementsByClassName(nameModal)[0].style.display = 'none';
+  document.getElementsByClassName('overlay')[0].style.display = 'none';
+};
+
+btnCloseBasket.addEventListener('click', function () {
+  return closeModal('modal-basket');
+});
+
+_toConsumableArray(btnOpenBasket).forEach(function (btn) {
+  return btn.addEventListener('click', function () {
+    return openModal('modal-basket');
+  });
+});
+
+window.onclick = function (event) {
+  if (event.target.classList.contains('overlay')) {
+    document.getElementsByClassName('modal-basket')[0].style.display = 'none';
+    document.getElementsByClassName('overlay')[0].style.display = 'none';
+  }
+};

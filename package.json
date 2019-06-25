@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "watch": "stylus --watch css/main.styl",
-    "babel": "npx babel src --out-dir dist"
+    "babel": "npx babel src -w -d dist"
   },
   "author": "",
   "license": "ISC",
