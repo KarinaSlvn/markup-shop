@@ -67,15 +67,27 @@ rightButton.addEventListener('click', function () {
 });
 var btnOpenBasket = document.querySelectorAll('.custom-links .cart');
 var btnCloseBasket = document.getElementsByClassName('footer-checkout')[0];
+var btnOpenMenu = document.getElementsByClassName('burger-menu');
+var btnCloseMenu = document.getElementsByClassName('close-modal-menu');
 
 var openModal = function openModal(nameModal) {
-  document.getElementsByClassName(nameModal)[0].style.display = 'flex';
-  document.getElementsByClassName('overlay')[0].style.display = 'flex';
+  _toConsumableArray(document.getElementsByClassName(nameModal)).forEach(function (modal) {
+    return modal.style.display = 'flex';
+  });
+
+  _toConsumableArray(document.getElementsByClassName('overlay')).forEach(function (overlay) {
+    return overlay.style.display = 'flex';
+  });
 };
 
 var closeModal = function closeModal(nameModal) {
-  document.getElementsByClassName(nameModal)[0].style.display = 'none';
-  document.getElementsByClassName('overlay')[0].style.display = 'none';
+  _toConsumableArray(document.getElementsByClassName(nameModal)).forEach(function (modal) {
+    return modal.style.display = 'none';
+  });
+
+  _toConsumableArray(document.getElementsByClassName('overlay')).forEach(function (overlay) {
+    return overlay.style.display = 'none';
+  });
 };
 
 btnCloseBasket.addEventListener('click', function () {
@@ -88,9 +100,67 @@ _toConsumableArray(btnOpenBasket).forEach(function (btn) {
   });
 });
 
+_toConsumableArray(btnCloseMenu).forEach(function (btn) {
+  return btn.addEventListener('click', function () {
+    return closeModal('modal-menu');
+  });
+});
+
+_toConsumableArray(btnOpenMenu).forEach(function (btn) {
+  return btn.addEventListener('click', function () {
+    return openModal('modal-menu');
+  });
+});
+
 window.onclick = function (event) {
   if (event.target.classList.contains('overlay')) {
-    document.getElementsByClassName('modal-basket')[0].style.display = 'none';
-    document.getElementsByClassName('overlay')[0].style.display = 'none';
+    _toConsumableArray(document.getElementsByClassName('modal-basket')).forEach(function (modal) {
+      return modal.style.display = 'none';
+    });
+
+    _toConsumableArray(document.getElementsByClassName('modal-menu')).forEach(function (modal) {
+      return modal.style.display = 'none';
+    });
+
+    _toConsumableArray(document.getElementsByClassName('overlay')).forEach(function (overlay) {
+      return overlay.style.display = 'none';
+    });
   }
 };
+
+var btnOpenSubMenu = document.querySelectorAll('.menu-link .open-link');
+
+var toggleModal = function toggleModal(target) {
+  if (target.innerText === '+') {
+    target.innerText = '-';
+    target.parentNode.nextElementSibling.style.display = 'flex';
+  } else {
+    target.innerText = '+';
+    target.parentNode.nextElementSibling.style.display = 'none';
+  }
+};
+
+btnOpenSubMenu.forEach(function (btn) {
+  return btn.addEventListener('click', function (_ref) {
+    var target = _ref.target;
+    toggleModal(target);
+
+    _toConsumableArray(document.getElementsByClassName('menu-content')).forEach(function (menu) {
+      if (menu.parentNode.style.display === 'flex') {
+        if (menu.offsetHeight > 400) {
+          menu.classList.add('scroll');
+
+          _toConsumableArray(document.getElementsByClassName('menu__footer')).forEach(function (footer) {
+            return footer.style.display = 'none';
+          });
+        } else {
+          menu.classList.remove('scroll');
+
+          _toConsumableArray(document.getElementsByClassName('menu__footer')).forEach(function (footer) {
+            return footer.style.display = 'flex';
+          });
+        }
+      }
+    });
+  });
+});

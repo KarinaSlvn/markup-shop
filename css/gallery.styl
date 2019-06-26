@@ -19,6 +19,18 @@
        overflow hidden
        position relative
        cursor pointer
+       .overlay-img
+         display none
+         width 100%
+         height 100%
+         position absolute
+         top 0
+         left 0
+         background-color rgba(17,17,17,0.44)
+         z-index 2
+
+       &:hover  .overlay-img
+         display flex
 
        .gallery__img
          object-fit cover
@@ -26,13 +38,6 @@
          height 100%
          width 100%
          transform scale(1.5)
-
-         &:hover
-           filter: brightness(50%);
-           -webkit-filter brightness(50%)
-           -ms-filter brightness(50%)
-           -moz-filter brightness(50%)
-           -o-filter brightness(50%)
 
        .block__text
          position absolute
@@ -42,25 +47,26 @@
          transform translate(-50%, -50%)
          font-size 2rem
          text-shadow $text-shadow-gallery
+         z-index 3
 
-     .--first-block, .--second-block
+     .first-block, .second-block
        width 49%
 
-     .--third-block, .--seven-block
+     .third-block, .seven-block
        width 64%
 
-     .--four-block, .--six-block
+     .four-block, .six-block
        width 34%
 
-     .--second-block, .--four-block
+     .second-block, .four-block
        .gallery__img
          object-position 100%
 
-     .--six-block
+     .six-block
        .gallery__img
          object-position 10% 20%
 
-     .--seven-block
+     .seven-block
        .gallery__img
          object-position 10% 20%
 
@@ -90,16 +96,16 @@
          margin-bottom 20px
 
 
-       .--first-block, .--second-block
+       .first-block, .second-block
          height 220px
 
-       .--third-block
+       .third-block
          height 170px
 
-       .--four-block, .--six-block
+       .four-block, .six-block
          height 300px
 
-       .--seven-block
+       .seven-block
          height 180px
 
 @media (min-width: 320px) and (max-width: 375px)
